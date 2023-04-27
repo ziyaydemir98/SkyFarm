@@ -6821,7 +6821,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35c3f2b103669e34abf77eb2c3bdb52b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 088dcf656f141c14cbb79e4e1f3d2904, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11006,8 +11006,7 @@ MonoBehaviour:
   - {fileID: 325586959}
   - {fileID: 74738453}
   Prices: 64000000c80000002c01000090010000f401000058020000bc0200002003000084030000e8030000b00400001405000078050000dc05000040060000
-  FarmCapacity: 0a0000000f00000014000000190000001e00000023000000280000002d00000032000000370000003c00000041000000460000004b00000050000000
-  count: 0
+  FarmCapacity: 100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e000000
 --- !u!114 &397496495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13004,7 +13003,7 @@ MonoBehaviour:
   farmManager: {fileID: 6817296022084712389}
   dataName: Cow
   Prices: 
-  temporaryTime: 3
+  temporaryTime: 15
 --- !u!114 &474722222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18603,7 +18602,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608379499}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7e910a75bb0fe954a9be843fb21182b3, type: 3}
@@ -25658,7 +25657,7 @@ MonoBehaviour:
   farmManager: {fileID: 6277822997069784100}
   dataName: Duck
   Prices: 
-  temporaryTime: 3
+  temporaryTime: 15
 --- !u!114 &821320592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26585,7 +26584,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35c3f2b103669e34abf77eb2c3bdb52b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 110686e9699e01246906777073aeea06, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26730,7 +26729,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &842766895
 MonoBehaviour:
@@ -26767,7 +26766,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1230a91a23d0849128d2f8c63b5996fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab34b062c32af184baa746e6d9262c89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -29641,7 +29640,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35c3f2b103669e34abf77eb2c3bdb52b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: de397e86bb3449348838852e8234e7c6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -39460,7 +39459,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1222745793}
   m_OnClick:
     m_PersistentCalls:
@@ -39878,7 +39877,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1227669650}
   m_OnClick:
     m_PersistentCalls:
@@ -40089,7 +40088,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1229967935
 MonoBehaviour:
@@ -40126,7 +40125,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1230a91a23d0849128d2f8c63b5996fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab34b062c32af184baa746e6d9262c89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -44975,7 +44974,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1394341022}
   m_OnClick:
     m_PersistentCalls:
@@ -48206,7 +48205,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -300}
+  m_SizeDelta: {x: -158.207, y: -233.131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1487869515
 MonoBehaviour:
@@ -48243,7 +48242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 656face7a24680343acb06d574a0a492, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2deb3fad566bae34d940bc45bb695661, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -48743,7 +48742,7 @@ MonoBehaviour:
   farmManager: {fileID: 3401185250471175329}
   dataName: Chicken
   Prices: 
-  temporaryTime: 3
+  temporaryTime: 15
 --- !u!82 &1494139046
 AudioSource:
   m_ObjectHideFlags: 0
@@ -60020,7 +60019,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1839542588}
   m_OnClick:
     m_PersistentCalls:
@@ -60585,8 +60584,7 @@ MonoBehaviour:
   - {fileID: 675174052}
   - {fileID: 721914078}
   Prices: 64000000c80000002c01000090010000f401000058020000bc0200002003000084030000e8030000b00400001405000078050000dc05000040060000
-  FarmCapacity: 0a0000000f00000014000000190000001e00000023000000280000002d00000032000000370000003c00000041000000460000004b00000050000000
-  count: 0
+  FarmCapacity: 100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e000000
 --- !u!114 &1846634703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61160,7 +61158,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1853236472
 MonoBehaviour:
@@ -61197,7 +61195,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1230a91a23d0849128d2f8c63b5996fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab34b062c32af184baa746e6d9262c89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -64361,7 +64359,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -300}
+  m_SizeDelta: {x: -158.207, y: -233.131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1963406967
 MonoBehaviour:
@@ -64398,7 +64396,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 656face7a24680343acb06d574a0a492, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2deb3fad566bae34d940bc45bb695661, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -67365,7 +67363,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -300}
+  m_SizeDelta: {x: -158.207, y: -233.131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2015867285
 MonoBehaviour:
@@ -67402,7 +67400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 656face7a24680343acb06d574a0a492, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2deb3fad566bae34d940bc45bb695661, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -67457,7 +67455,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -200, y: -300}
+  m_SizeDelta: {x: -158.207, y: -233.131}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2015871038
 MonoBehaviour:
@@ -67479,7 +67477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 656face7a24680343acb06d574a0a492, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2deb3fad566bae34d940bc45bb695661, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -69219,7 +69217,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2057830246
 MonoBehaviour:
@@ -69241,7 +69239,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1230a91a23d0849128d2f8c63b5996fe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ab34b062c32af184baa746e6d9262c89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -72222,8 +72220,7 @@ MonoBehaviour:
   - {fileID: 772869742}
   - {fileID: 1612094113}
   Prices: 64000000c80000002c01000090010000f401000058020000bc0200002003000084030000e8030000b00400001405000078050000dc05000040060000
-  FarmCapacity: 0a0000000f00000014000000190000001e00000023000000280000002d00000032000000370000003c00000041000000460000004b00000050000000
-  count: 0
+  FarmCapacity: 100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e000000
 --- !u!114 &2146466394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72791,6 +72788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a754081a6ed01b742984d0b42c70b908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  farmName: Chicken
   inGameManager: {fileID: 608379501}
   upgradeCanvas: {fileID: 8210585600315190589}
   layerMask:
@@ -73076,7 +73074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   harvestPools: 0
-  poolSize: 1000
+  poolSize: 2000
   poolHarvestGameObject: {fileID: 1044805089862091033, guid: a1c59f1e2e1294a42b0b915a221ee137, type: 3}
 --- !u!4 &2389184165234208044
 Transform:
@@ -73111,7 +73109,7 @@ MonoBehaviour:
   harvestPool: {fileID: 2389184165234208035}
   AnimalSpawnPoint: {fileID: 2389184165045007754}
   AnimalSpawnPointX: {fileID: 927328162}
-  harvestTimer: 3
+  harvestTimer: 15
 --- !u!114 &3401185252234851983
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73125,7 +73123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalPools: 0
-  poolSize: 100
   poolAnimalGameObject: {fileID: 5780044187442093651, guid: 78209d177ae51fa4c94cfd8298731edc, type: 3}
 --- !u!1 &3708737476562207775
 GameObject:
@@ -73168,6 +73165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a754081a6ed01b742984d0b42c70b908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  farmName: Sheep
   inGameManager: {fileID: 608379501}
   upgradeCanvas: {fileID: 1621544453}
   layerMask:
@@ -73235,7 +73233,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalPools: 2
-  poolSize: 100
   poolAnimalGameObject: {fileID: 6394516287451643574, guid: 931f7ed19cd3c9f499ffeeb195a976ae, type: 3}
 --- !u!1 &3741282439682236136
 GameObject:
@@ -73424,7 +73421,7 @@ MonoBehaviour:
   harvestPool: {fileID: 0}
   AnimalSpawnPoint: {fileID: 3741282439682236136}
   AnimalSpawnPointX: {fileID: 699763662}
-  harvestTimer: 10
+  harvestTimer: 45
 --- !u!4 &4694042543056315777
 Transform:
   m_ObjectHideFlags: 0
@@ -73565,7 +73562,7 @@ MonoBehaviour:
   harvestPool: {fileID: 6277822998196928933}
   AnimalSpawnPoint: {fileID: 6277822996666904047}
   AnimalSpawnPointX: {fileID: 912271788}
-  harvestTimer: 3
+  harvestTimer: 15
 --- !u!65 &6277822997680609688
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -73591,6 +73588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a754081a6ed01b742984d0b42c70b908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  farmName: Duck
   inGameManager: {fileID: 608379501}
   upgradeCanvas: {fileID: 709382627}
   layerMask:
@@ -73658,7 +73656,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalPools: 1
-  poolSize: 100
   poolAnimalGameObject: {fileID: 1055336359792074406, guid: 4ef4e323a041425469983146c1699b56, type: 3}
 --- !u!1 &6277822998196928932
 GameObject:
@@ -73690,7 +73687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   harvestPools: 1
-  poolSize: 1000
+  poolSize: 2000
   poolHarvestGameObject: {fileID: 1044805089862091033, guid: c67f3b1ac10267b47a5788fe528aecf1, type: 3}
 --- !u!4 &6277822998196928934
 Transform:
@@ -73824,7 +73821,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animalPools: 3
-  poolSize: 100
   poolAnimalGameObject: {fileID: 3876733593504004223, guid: a7f853af95ae9434bb1fb46fb2bfa832, type: 3}
 --- !u!1 &6817296021811665172
 GameObject:
@@ -73870,7 +73866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   harvestPools: 2
-  poolSize: 1000
+  poolSize: 2000
   poolHarvestGameObject: {fileID: 1044805089862091033, guid: aeb0d13cffafc484282fbfd4d0716e8b, type: 3}
 --- !u!4 &6817296021999792067
 Transform:
@@ -73940,7 +73936,7 @@ MonoBehaviour:
   harvestPool: {fileID: 6817296021999792066}
   AnimalSpawnPoint: {fileID: 6817296021811665172}
   AnimalSpawnPointX: {fileID: 1133451707}
-  harvestTimer: 3
+  harvestTimer: 15
 --- !u!114 &6817296022084712410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74069,6 +74065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a754081a6ed01b742984d0b42c70b908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  farmName: Cow
   inGameManager: {fileID: 608379501}
   upgradeCanvas: {fileID: 994548986}
   layerMask:
@@ -74593,8 +74590,7 @@ MonoBehaviour:
   - {fileID: 2141282618}
   - {fileID: 616091252}
   Prices: d0070000a00f000070170000401f000010270000d4300000983a00005c440000204e0000a861000030750000b8880000409c000050c3000060ea0000
-  FarmCapacity: 0a0000000f00000014000000190000001e00000023000000280000002d00000032000000370000003c00000041000000460000004b00000050000000
-  count: 0
+  FarmCapacity: 100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e000000
 --- !u!82 &8210585600646772825
 AudioSource:
   m_ObjectHideFlags: 0

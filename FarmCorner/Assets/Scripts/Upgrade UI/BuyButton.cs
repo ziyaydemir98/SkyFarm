@@ -82,7 +82,7 @@ public class BuyButton : MonoBehaviour
     void ButtonUpdateBuy()
     {
         DataUpdate();
-        localCapacity = PlayerPrefs.GetInt($"FarmCapacity{dataName}", farmLevelUpButton.FarmCapacity[farmLevelUpButton.count]);
+        localCapacity = PlayerPrefs.GetInt($"FarmCapacity{dataName}", farmLevelUpButton.FarmCapacity[farmLevelUpButton.Count]);
         TextUpdate();
         if (GameManager.Instance.PlayerMoney >= price && count < localCapacity) button.interactable = true;
         else button.interactable = false;

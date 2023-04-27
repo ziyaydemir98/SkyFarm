@@ -11,6 +11,17 @@ public class HarvestPool : MonoBehaviour
 
     [SerializeField] private int poolSize;
     [SerializeField] private GameObject poolHarvestGameObject;
+    public int poolsize
+    {
+        get
+        {
+            return poolSize;
+        }
+        private set
+        {
+
+        }
+    }
 
     private void Awake()
     {

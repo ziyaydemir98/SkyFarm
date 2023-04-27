@@ -148,7 +148,7 @@ public class TutorialScript : MonoBehaviour
     {
         foreach (var button in Buttons)
         {
-            button.interactable = true;
+            button.interactable = false;
         }
         foreach (var image in Images)
         {

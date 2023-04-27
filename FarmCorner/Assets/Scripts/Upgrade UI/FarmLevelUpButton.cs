@@ -18,17 +18,31 @@ public class FarmLevelUpButton : MonoBehaviour
     [SerializeField] private List<int> Prices = new();
     [SerializeField] public List<int> FarmCapacity = new();
     private int price, localCapacity = new();
-    public int count;
+    private int count;
+    public int Count
+    {
+        get
+        {
+            return count;
+        }
+        set
+        {
+            count = value;
+        }
+    }
     private void Awake()
     {
         Load();
         ButtonUpdate();
+        farmManager.animalPool.AddPool(FarmCapacity[count]);
     }
     private void OnEnable()
     {
+        
         button.onClick.AddListener(FarmUpgrade);
         Load();
         ButtonUpdate();
+        
         GameManager.Instance.ButtonUpdate.AddListener(ButtonUpdate);
     }
     private void OnDisable()
@@ -46,6 +60,8 @@ public class FarmLevelUpButton : MonoBehaviour
         farmList[count].SetActive(true);
         Save();
         _particleSystem.Play();
+        farmManager.animalPool.poolsize = FarmCapacity[count];
+        farmManager.animalPool.AddPool(1);
         GameManager.Instance.ButtonUpdate.Invoke();
     }
 

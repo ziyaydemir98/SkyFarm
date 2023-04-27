@@ -55,14 +55,14 @@ public class MergeButton : MonoBehaviour
         TextUpdate();
         if (GameManager.Instance.PlayerMoney >= price)
         {
-            if (farmLevelUpButton.count > 4 && farmLevelUpButton.count < 9)
+            if (farmLevelUpButton.Count > 4 && farmLevelUpButton.Count < 9)
             {
                 if (level1Animal>1) button.interactable = true;
                 else button.interactable = false;
             }
             else button.interactable = false;
 
-            if (farmLevelUpButton.count > 8)
+            if (farmLevelUpButton.Count > 8)
             {
                 if (level1Animal > 1 || level2Animal > 1) button.interactable = true;
                 else button.interactable = false;
@@ -86,12 +86,12 @@ public class MergeButton : MonoBehaviour
                     break;
             }
         }
-        if (farmLevelUpButton.count>4 && farmLevelUpButton.count < 9)
+        if (farmLevelUpButton.Count > 4 && farmLevelUpButton.Count < 9)
         {
             count = 0;
             price = Prices[count];
         }
-        else if (farmLevelUpButton.count > 8)
+        else if (farmLevelUpButton.Count > 8)
         {
             if (level1Animal > 1)
             {
@@ -107,9 +107,9 @@ public class MergeButton : MonoBehaviour
     }
     void TextUpdate()
     {
-        if (farmLevelUpButton.count > 4 && farmLevelUpButton.count < 9)
+        if (farmLevelUpButton.Count > 4 && farmLevelUpButton.Count < 9)
         {
-            if (level1Animal < 2 && level2Animal > 1 && farmManager.AnimalsList.Count < farmLevelUpButton.FarmCapacity[farmLevelUpButton.count])
+            if (level1Animal < 2 && level2Animal > 1 && farmManager.AnimalsList.Count < farmLevelUpButton.FarmCapacity[farmLevelUpButton.Count])
             {
                 MergeText.text = "Need More Animal";
             }
@@ -118,13 +118,13 @@ public class MergeButton : MonoBehaviour
                 MergeText.text = $"{dataName} up Lv 2";
                 MergePriceText.text = price.ToString();
             }
-            if (level1Animal < 2 && level2Animal < 2 && farmManager.AnimalsList.Count >= farmLevelUpButton.FarmCapacity[farmLevelUpButton.count])
+            if (level1Animal < 2 && level2Animal < 2 && farmManager.AnimalsList.Count >= farmLevelUpButton.FarmCapacity[farmLevelUpButton.Count])
             {
                 //MergePriceText.text = $"{dataName} Upgrade for Need Farm Lvl Up";
                 MergeText.text = "Need Farm Lv up";
             }
         }
-        else if (farmLevelUpButton.count > 7)
+        else if (farmLevelUpButton.Count > 7)
         {
             if (level1Animal > 1)
             {
@@ -138,7 +138,7 @@ public class MergeButton : MonoBehaviour
             }
             else if (level1Animal < 2 && level2Animal < 2)
             {
-                if (farmManager.AnimalsList.Count >= farmLevelUpButton.FarmCapacity[farmLevelUpButton.count])
+                if (farmManager.AnimalsList.Count >= farmLevelUpButton.FarmCapacity[farmLevelUpButton.Count])
                 {
                     MergeText.text = "Need More Capacity";
                 }

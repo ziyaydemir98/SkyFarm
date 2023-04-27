@@ -38,7 +38,7 @@ public class FarmManager : MonoBehaviour
         }
     }
     [SerializeField] private InGameManager inGameManager;
-    [SerializeField] private AnimalPool animalPool;
+    [SerializeField] public AnimalPool animalPool;
     [SerializeField] public HarvestPool harvestPool;
     [SerializeField] private GameObject AnimalSpawnPoint;
     [SerializeField] private GameObject AnimalSpawnPointX;
@@ -209,6 +209,7 @@ public class FarmManager : MonoBehaviour
                 hour = 0;
             }
         }
+        Debug.Log(sec);
 
     }
     private void OnDisable()
@@ -284,6 +285,7 @@ public class FarmManager : MonoBehaviour
         {
             animal.GetComponent<SheepSkinManager>().FarmManager = this;
         }
+        SaveData();
     }
 
     public void CloseFarm()
@@ -432,8 +434,13 @@ public class FarmManager : MonoBehaviour
                 
                 harvest.SetActive(true);
                 GameManager.Instance.ButtonUpdate.Invoke();
+                
             }
         }
+        //if (harvestList.Count>0)
+        //{
+        //    GameManager.Instance.HarvestButtonUpdate.Invoke();
+        //}
     }
 
     #endregion

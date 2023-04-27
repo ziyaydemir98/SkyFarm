@@ -59,11 +59,6 @@ public class InGameManager : MonoBehaviour
         }
     }
 
-    private float minZoom = 1f; // Minimum yakınlaşma düzeyi
-    private float maxZoom = 10f; // Maksimum yakınlaşma düzeyi
-
-    private float initialDistance; // Başlangıçtaki parmak mesafesi
-    private float initialZoom; // Başlangıçtaki kamera yakınlaşma düzeyi
     #endregion
 
     #region Functions
@@ -93,104 +88,70 @@ public class InGameManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.touchCount<2)
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
+
+            canButtonDown = EventSystem.current.IsPointerOverGameObject();
+
+            CanButtonDown = canButtonDown;
+
+            _startPoint = Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, 0, 0));
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (PlayerPrefs.GetInt("FirstOpen", 0) == 1)
             {
-
-                canButtonDown = EventSystem.current.IsPointerOverGameObject();
-
-                CanButtonDown = canButtonDown;
-
-                _startPoint = Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, 0, 0));
-            }
-
-            if (Input.GetMouseButtonUp(0))
-            {
-                if (PlayerPrefs.GetInt("FirstOpen", 0) == 1)
+                _endPoint = Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, 0, 0));
+                _directionDifX = _startPoint.x - _endPoint.x;
+                if (!canDrag || canButtonDown) return;
+                if (_directionDifX <= -0.25f) // screen swiped to the right?
                 {
-                    _endPoint = Camera.main.ScreenToViewportPoint(new Vector3(Input.mousePosition.x, 0, 0));
-                    _directionDifX = _startPoint.x - _endPoint.x;
-                    if (!canDrag || canButtonDown) return;
-                    if (_directionDifX <= -0.25f) // screen swiped to the right?
-                    {
-                        _count = PlayerPrefs.GetInt("FarmCount", 0);
-                        StartCoroutine(CooldownAsync(duration));
-                        PosAndRotUpdate();
-                        ScrollRightFrontToBack();
-                        RotateObjectWithTween(_targetRotation);
-                        MoveObjectWithTween(_targetMoveX, _targetMoveZ);
-                        _tempCount = _count;
-                        _count++;
-                        CountUpade();
-                        PlayerPrefs.SetInt("FarmCount", _count);
-                        prefabList[_count].transform.position = endPointLeft;
-                        RotateUpdateWithTween(-90);
-                        PosAndRotUpdate();
-                        ScrollRightBackToFront();
-                        AnimalStop();
-                        Invoke(nameof(ObjectFalse), duration);
-                        prefabList[_count].gameObject.SetActive(true);
-                        RotateObjectWithTween(_targetRotation);
-                        MoveObjectWithTween(_targetMoveX, _targetMoveZ);
-                    }
-                    else if (_directionDifX >= 0.25f) // screen swiped to the left?
-                    {
-                        _count = PlayerPrefs.GetInt("FarmCount", 0);
-                        StartCoroutine(CooldownAsync(duration));
-                        PosAndRotUpdate();
-                        ScrollLeftFrontToBack();
-                        RotateObjectWithTween(_targetRotation);
-                        MoveObjectWithTween(_targetMoveX, _targetMoveZ);
-                        _tempCount = _count;
-                        _count--;
-                        CountUpade();
-                        PlayerPrefs.SetInt("FarmCount", _count);
-                        prefabList[_count].transform.position = endPointRight;
-                        RotateUpdateWithTween(90);
-                        PosAndRotUpdate();
-                        ScrollLeftBackToFront();
-                        AnimalStop();
-                        Invoke(nameof(ObjectFalse), duration);
-                        prefabList[_count].gameObject.SetActive(true);
-                        RotateObjectWithTween(_targetRotation);
-                        MoveObjectWithTween(_targetMoveX, _targetMoveZ);
-                    }
+                    _count = PlayerPrefs.GetInt("FarmCount", 0);
+                    StartCoroutine(CooldownAsync(duration));
+                    PosAndRotUpdate();
+                    ScrollRightFrontToBack();
+                    RotateObjectWithTween(_targetRotation);
+                    MoveObjectWithTween(_targetMoveX, _targetMoveZ);
+                    _tempCount = _count;
+                    _count++;
+                    CountUpade();
+                    PlayerPrefs.SetInt("FarmCount", _count);
+                    prefabList[_count].transform.position = endPointLeft;
+                    RotateUpdateWithTween(-90);
+                    PosAndRotUpdate();
+                    ScrollRightBackToFront();
+                    AnimalStop();
+                    Invoke(nameof(ObjectFalse), duration);
+                    prefabList[_count].gameObject.SetActive(true);
+                    RotateObjectWithTween(_targetRotation);
+                    MoveObjectWithTween(_targetMoveX, _targetMoveZ);
                 }
-
+                else if (_directionDifX >= 0.25f) // screen swiped to the left?
+                {
+                    _count = PlayerPrefs.GetInt("FarmCount", 0);
+                    StartCoroutine(CooldownAsync(duration));
+                    PosAndRotUpdate();
+                    ScrollLeftFrontToBack();
+                    RotateObjectWithTween(_targetRotation);
+                    MoveObjectWithTween(_targetMoveX, _targetMoveZ);
+                    _tempCount = _count;
+                    _count--;
+                    CountUpade();
+                    PlayerPrefs.SetInt("FarmCount", _count);
+                    prefabList[_count].transform.position = endPointRight;
+                    RotateUpdateWithTween(90);
+                    PosAndRotUpdate();
+                    ScrollLeftBackToFront();
+                    AnimalStop();
+                    Invoke(nameof(ObjectFalse), duration);
+                    prefabList[_count].gameObject.SetActive(true);
+                    RotateObjectWithTween(_targetRotation);
+                    MoveObjectWithTween(_targetMoveX, _targetMoveZ);
+                }
             }
+
         }
-        else if (Input.touchCount == 2)
-        {
-            // İlk iki parmağın pozisyonunu al
-            Touch touch1 = Input.GetTouch(0);
-            Touch touch2 = Input.GetTouch(1);
-
-            // İlk çerçeve ise (dokunma başlamışsa)
-            if (touch2.phase == TouchPhase.Began)
-            {
-                // İlk parmakların arasındaki mesafeyi kaydet
-                initialDistance = Vector2.Distance(touch1.position, touch2.position);
-                // Kameranın başlangıçtaki yakınlaşma düzeyini kaydet
-                initialZoom = Camera.main.orthographicSize;
-            }
-
-            // Şu anki parmak mesafesini ve kameranın hedef yakınlaşma düzeyini hesapla
-            float currentDistance = Vector2.Distance(touch1.position, touch2.position);
-            float zoomAmount = initialDistance - currentDistance;
-
-            // Kameranın yakınlaşma düzeyini güncelle
-            float zoomSpeed = zoomAmount * 0.01f; // Yakınlaştırma hızını parmak hızına bağlı olarak hesapla
-            float newZoom = initialZoom + zoomAmount * zoomSpeed;
-            Camera.main.orthographicSize = Mathf.Clamp(newZoom, minZoom, maxZoom);
-        }
-        else
-        {
-            // Parmaklar kaldırıldığında kamerayı eski pozisyonuna döndür
-            Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, initialZoom, Time.deltaTime * 5f); // Lerp fonksiyonu ile kamera hızını ayarla
-        }
-
-
     }   
 
     void RotateObjectWithTween(float _target) // Object rotation algorithm

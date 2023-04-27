@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class FarmUpgrade : MonoBehaviour
 {
     #region Variables
-
+    [SerializeField] string farmName;
     [SerializeField] InGameManager inGameManager;
     [SerializeField] private GameObject upgradeCanvas;
     [SerializeField] private LayerMask layerMask;
@@ -25,72 +25,75 @@ public class FarmUpgrade : MonoBehaviour
     }
     void Update()
     {
-        if (inGameManager.CanDrag)
+        if (PlayerPrefs.GetInt($"Farm{farmName}", 0)==1 || (farmName == "Chicken" && PlayerPrefs.GetInt("FirstOpen", 0) == 1))
         {
-            if (Input.GetMouseButtonDown(0))
+            if (inGameManager.CanDrag)
             {
-                RaycastHit hit;
-                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+                if (Input.GetMouseButtonDown(0))
                 {
-                    if (hit.transform.gameObject != upgradeCanvas)
+                    RaycastHit hit;
+                    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+
+                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
                     {
-                        onHit = true;  
-                        canvasStart = false;
+                        if (hit.transform.gameObject != upgradeCanvas)
+                        {
+                            onHit = true;
+                            canvasStart = false;
+                        }
+                        else
+                        {
+                            onHit = false;
+                            canvasStart = true;
+                        }
                     }
                     else
                     {
                         onHit = false;
-                        canvasStart = true;
+                        canvasStart = false;
                     }
                 }
-                else
+                if (Input.GetMouseButtonUp(0))
                 {
-                    onHit = false;
-                    canvasStart = false;
-                }
-            }
-            if (Input.GetMouseButtonUp(0))
-            {
-                RaycastHit hit;
-                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
-                {
-
-                    if (onHit && hit.transform.gameObject != upgradeCanvas)
+                    RaycastHit hit;
+                    Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
                     {
-                        if (_isOpen && !inGameManager.CanButtonDown)
+
+                        if (onHit && hit.transform.gameObject != upgradeCanvas)
                         {
-                            _isOpen = false;
-                            CloseCanvas();
-                        }
-                        else
-                        {
-                            _isOpen = true; 
-                            if (!inGameManager.CanButtonDown)    
+                            if (_isOpen && !inGameManager.CanButtonDown)
                             {
-                                OpenCanvas();
+                                _isOpen = false;
+                                CloseCanvas();
+                            }
+                            else
+                            {
+                                _isOpen = true;
+                                if (!inGameManager.CanButtonDown)
+                                {
+                                    OpenCanvas();
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (!onHit)
+                        {
+                            if (_isOpen && !canvasStart && !inGameManager.CanButtonDown)
+                            {
+                                _isOpen = false;
+                                CloseCanvas();
                             }
                         }
                     }
                 }
-                else
-                {
-                    if (!onHit)
-                    {
-                        if (_isOpen && !canvasStart && !inGameManager.CanButtonDown)
-                        {
-                            _isOpen = false;
-                            CloseCanvas();
-                        }
-                    }
-                }
             }
-        }
-        else
-        {
-            CloseCanvas();
+            else
+            {
+                CloseCanvas();
+            }
         }
     }
     public void OpenCanvas()

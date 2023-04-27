@@ -8,6 +8,7 @@ public class AnimalManager : MonoBehaviour
 {
 
     #region Variables
+    bool ListEmpty;
     public delegate void Animation();
     public event Animation IsWalkEvent;
     public event Animation IsIdleEvent;
@@ -94,30 +95,33 @@ public class AnimalManager : MonoBehaviour
 
         if (farmManager.FarmTypeInt != 2)
         {
-            GameObject harvest = farmManager.harvestPool.GetPooledHarvestObject();
-
-            switch (Level)
+            if (farmManager.HarvestList.Count < farmManager.harvestPool.poolsize)
             {
-                case 1:
-                    harvest.tag = "level1";
-                    break;
-                case 2:
-                    harvest.tag = "level2";
-                    break;
-                case 3:
-                    harvest.tag = "level3";
-                    break;
+                GameObject harvest = farmManager.harvestPool.GetPooledHarvestObject();
+
+                switch (Level)
+                {
+                    case 1:
+                        harvest.tag = "level1";
+                        break;
+                    case 2:
+                        harvest.tag = "level2";
+                        break;
+                    case 3:
+                        harvest.tag = "level3";
+                        break;
+                }
+
+                farmManager.HarvestList.Add(harvest);
+
+                if (isLocal)
+                    harvest.transform.localPosition = pos;
+                else
+                    harvest.transform.position = pos;
+
+                harvest.SetActive(true);
+                GameManager.Instance.HarvestButtonUpdate.Invoke();
             }
-
-            farmManager.HarvestList.Add(harvest);
-
-            if (isLocal)
-                harvest.transform.localPosition = pos;
-            else
-                harvest.transform.position = pos;
-
-            harvest.SetActive(true);
-            GameManager.Instance.HarvestButtonUpdate.Invoke();
         }
     }
     private void SetRandomDestination()
@@ -205,15 +209,19 @@ public class AnimalManager : MonoBehaviour
             delayCount = farmManager.Sec / farmManager.HarvestTimer;
             int tempDelayCount = (int)delayCount * farmManager.AnimalCount;
             OneBiggerDelayHarvestCreated(tempDelayCount);
+            Debug.Log(farmManager.Sec);
             farmManager.Sec = 0;
+            
         }
         else if (farmManager.Sec < farmManager.HarvestTimer && farmManager.Sec > 0.01f) // HASAR SURESINDEN KISA ZAMAN GECTIYSE
         {
             float tempTimer;
-            tempTimer = farmManager.HarvestTimer - farmManager.Sec; ;
+            tempTimer = farmManager.HarvestTimer - farmManager.Sec;
             Invoke(nameof(OneLowerDelayHarvestCreated), tempTimer);
+            Debug.Log(farmManager.Sec);
             farmManager.Sec = 0;
         }
+
     }
     void OneBiggerDelayHarvestCreated(int index)
     {
@@ -223,6 +231,7 @@ public class AnimalManager : MonoBehaviour
             var pointZ = Random.Range(-0.9f, 5.4f);
             SpawnCount(new Vector3(pointX, 0.03666667f, pointZ), true);
         }
+        GameManager.Instance.HarvestButtonUpdate.Invoke();
     }
     void OneLowerDelayHarvestCreated()
     {

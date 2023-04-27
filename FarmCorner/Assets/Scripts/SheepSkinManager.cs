@@ -34,7 +34,7 @@ public class SheepSkinManager : MonoBehaviour
             growComplete = value;
         }
     }
-    bool skinBreak = false;
+    bool skinBreak = true;
 
     #endregion
 
@@ -106,6 +106,7 @@ public class SheepSkinManager : MonoBehaviour
     {
         if (GrowComplete) return;
         {
+            Debug.Log(FarmManager.Sec);
             if (FarmManager.Sec > 0 && skinBreak)
             {
                 if (FarmManager.Sec >= farmManager.HarvestTimer) // HASAT SURESINDEN UZUN BEKLENDIYSE
@@ -115,6 +116,7 @@ public class SheepSkinManager : MonoBehaviour
                     FarmManager.Sec = 0;
                     horizontalF = horizontalF / farmManager.HarvestTimer;
                     verticalF = horizontalF / 2;
+                    Debug.Log("UZUN");
                 }
                 else if (FarmManager.Sec < farmManager.HarvestTimer && FarmManager.Sec > 0.01f) // HASAR SURESINDEN KISA ZAMAN GECTIYSE
                 {
@@ -123,6 +125,7 @@ public class SheepSkinManager : MonoBehaviour
                     FarmManager.Sec = 0;
                     horizontalF = horizontalF / farmManager.HarvestTimer;
                     verticalF = horizontalF / 2;
+                    Debug.Log("KISA");
                 }
                 skinBreak = false;
             }

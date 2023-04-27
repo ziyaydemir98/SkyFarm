@@ -24,18 +24,18 @@ public class HarvestButton : MonoBehaviour
     float money;
     private void Awake()
     {
-        if (farmManager.FarmTypeInt != 2)
-        {
-            if (farmManager.HarvestList.Count > 0)
-            {
-                button.interactable = true;
-            }
-            else
-            {
-                button.interactable = false;
-            }
-        }
-        else button.interactable = false;
+        //if (farmManager.FarmTypeInt != 2)
+        //{
+        //    if (farmManager.HarvestList.Count > 0)
+        //    {
+        //        button.interactable = true;
+        //    }
+        //    else
+        //    {
+        //        button.interactable = false;
+        //    }
+        //}
+        //else button.interactable = false;
     }
     private void OnEnable()
     {
@@ -44,6 +44,10 @@ public class HarvestButton : MonoBehaviour
         button.onClick.AddListener(HarvestProduct);
         //GameManager.Instance.ButtonUpdate.AddListener(ButtonUpdateHarvest);
         GameManager.Instance.HarvestButtonUpdate.AddListener(ButtonUpdateHarvest);
+        if (farmManager.HarvestList.Count > 0)
+        {
+            button.interactable = true;
+        }
     }
     private void OnDisable()
     {

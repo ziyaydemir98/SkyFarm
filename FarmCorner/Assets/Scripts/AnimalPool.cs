@@ -9,7 +9,18 @@ public class AnimalPool : MonoBehaviour
 
     private Queue<AnimalManager> poolAnimalObject = new();
 
-    [SerializeField] private int poolSize;
+    private int poolSize = 0;
+    public int poolsize
+    {
+        get
+        {
+            return poolSize;
+        }
+        set
+        {
+            poolSize = value;
+        }
+    }
     [SerializeField] private AnimalManager poolAnimalGameObject;
 
     private void Awake()
@@ -47,6 +58,16 @@ public class AnimalPool : MonoBehaviour
     private void FillPool()
     {
         for (int i = 0; i < poolSize; i++)
+        {
+            AnimalManager animal = Instantiate(poolAnimalGameObject, Vector3.zero, Quaternion.identity);
+            animal.gameObject.SetActive(false);
+            animal.transform.parent = gameObject.transform;
+            poolAnimalObject.Enqueue(animal);
+        }
+    }
+    public void AddPool(int size)
+    {
+        for (int i = 0; i < size; i++)
         {
             AnimalManager animal = Instantiate(poolAnimalGameObject, Vector3.zero, Quaternion.identity);
             animal.gameObject.SetActive(false);
